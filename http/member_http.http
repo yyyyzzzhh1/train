@@ -11,3 +11,15 @@ mobile=1234677
 
 
 ###
+
+POST http://localhost:8000/member/member/sendCode
+Content-Type: application/x-www-form-urlencoded
+
+mobile=12399890987
+
+###
+
+POST http://localhost:8000/member/member/login
+Content-Type: application/x-www-form-urlencoded
+
+mobile=12399890987&code=7777

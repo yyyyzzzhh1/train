@@ -11,7 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public enum BusinessExceptionEnum {
 
-    BUSINESS_EXCEPTION_ENUM("手机号已存在");
+    MEMBER_MObILE_EXIST("手机号已存在"),
+    MEMBER_MOBILE_NOT_EXIST("手机号不存在，请发送验证码"),
+    MEMBER_CODE_ERROR("验证码错误");
+
+
     private String desc;
 
     public String getDesc() {
