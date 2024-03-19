@@ -6,6 +6,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.jiawa.train.common.exception.BusinessException;
 import com.jiawa.train.common.exception.BusinessExceptionEnum;
+import com.jiawa.train.common.util.JwtUtil;
 import com.jiawa.train.common.util.SnowUtil;
 import com.jiawa.train.member.domain.Member;
 import com.jiawa.train.member.domain.MemberExample;
@@ -32,7 +33,7 @@ public class MemberService  {
     public long register(MemberRegisterReq req){
         Member memberDb = getMembers(req.getMobile());
 
-        if(ObjectUtil.isNull(memberDb)){
+        if(ObjectUtil.isNotNull(memberDb)){
             throw new BusinessException(BusinessExceptionEnum.MEMBER_MObILE_EXIST);
         }
         Member member = new Member();
@@ -70,6 +71,9 @@ public class MemberService  {
         }
 
         MemberLoginResp memberLoginResp = BeanUtil.copyProperties(members, MemberLoginResp.class);
+        String token = JwtUtil.createToken(memberLoginResp.getId(), memberLoginResp.getMobile());
+
+        memberLoginResp.setToken(token);
 
         return memberLoginResp;
 

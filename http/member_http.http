@@ -7,19 +7,39 @@ Accept: application/json
 POST http://localhost:8000/member/member/register
 Content-Type: application/x-www-form-urlencoded
 
-mobile=1234677
+mobile=12346777776
 
 
 ###
 
 POST http://localhost:8000/member/member/sendCode
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 
-mobile=12399890987
+{
+  "mobile" : "12399890987"
+}
 
 ###
 
 POST http://localhost:8000/member/member/login
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 
-mobile=12399890987&code=7777
+{
+  "mobile" : "12399890987",
+  "code" : "8888"
+}
+
+###
+
+POST http://localhost:8000/member/passenger/save
+Content-Type: application/json
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTA4MTY5MzUsIm1vYmlsZSI6IjEyMzk5ODkwOTg3IiwiaWQiOjE3Njc0NzQyMjAxOTcwODkyODAsImV4cCI6MTcxMDkwMzMzNSwiaWF0IjoxNzEwODE2OTM1fQ.Pkh5buVL0JdyiCU8YOSHPb3mB2VZ3pYBgr-eV7O6O8A
+
+{
+  "memberId": 1624581077500825600,
+  "name": "test1",
+  "idCard": "123321",
+  "type": "1"
+}
+
+###
