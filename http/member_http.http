@@ -33,13 +33,20 @@ Content-Type: application/json
 
 POST http://localhost:8000/member/passenger/save
 Content-Type: application/json
-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTA4MTY5MzUsIm1vYmlsZSI6IjEyMzk5ODkwOTg3IiwiaWQiOjE3Njc0NzQyMjAxOTcwODkyODAsImV4cCI6MTcxMDkwMzMzNSwiaWF0IjoxNzEwODE2OTM1fQ.Pkh5buVL0JdyiCU8YOSHPb3mB2VZ3pYBgr-eV7O6O8A
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTA5MTc4NTQsIm1vYmlsZSI6IjEzMDAwMDAwMDAwIiwiaWQiOjE3Njc1MzgyNjkxNjExMzIwMzIsImV4cCI6MTcxMTAwNDI1NCwiaWF0IjoxNzEwOTE3ODU0fQ.cXzvUggc1ioDGbyvc-wGCRodAVTFwES54yGIXbovXf0
 
 {
-  "memberId": 1624581077500825600,
+  "memberId": "1767538269161132032",
   "name": "test1",
-  "idCard": "123321",
+  "idCard": "112332122121311",
   "type": "1"
 }
+###
+
+GET http://localhost:8000/member/passenger/query_list?page=1&size=2
+Content-Type: application/json
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE3MTA4MTY5MzUsIm1vYmlsZSI6IjEyMzk5ODkwOTg3IiwiaWQiOjE3Njc0NzQyMjAxOTcwODkyODAsImV4cCI6MTcxMDkwMzMzNSwiaWF0IjoxNzEwODE2OTM1fQ.Pkh5buVL0JdyiCU8YOSHPb3mB2VZ3pYBgr-eV7O6O8A
+
+
 
 ###
